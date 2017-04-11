@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by MESMERIZE (MiZE) -->
+<xs:schema xmlns="http://www.w3.org/2011/personalityml" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.w3.org/2011/personalityml" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="personalityml">
+		<xs:annotation>
+			<xs:documentation>Root element of a personalityml document</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="personality" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="approach" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="model" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="theory" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="inventory" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="factors">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="factor" maxOccurs="unbounded">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="facets" minOccurs="0">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="facet" maxOccurs="unbounded">
+																													<xs:complexType>
+																														<xs:attribute name="name" type="xs:string" use="required"/>
+																														<xs:attribute name="score"/>
+																													</xs:complexType>
+																												</xs:element>
+																											</xs:sequence>
+																											<xs:attribute name="set" type="xs:anyURI" use="required"/>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																								<xs:attribute name="name" use="required"/>
+																								<xs:attribute name="score" type="xs:integer"/>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																					<xs:attribute name="set" type="xs:anyURI"/>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="test" type="xs:string" use="required"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="author" type="xs:string" use="required"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="theory" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="generic" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="name" use="required"/>
+															<xs:attribute name="score"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="author" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="name" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="metadata" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="timestamp">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="date" type="xs:date"/>
+													<xs:element name="time" type="xs:time" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="place">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="country" type="xs:string" minOccurs="0"/>
+													<xs:element name="language" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="tool">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="description" type="xs:string" minOccurs="0"/>
+												</xs:sequence>
+												<xs:attribute name="name" type="xs:string" use="required"/>
+												<xs:attribute name="url" type="xs:string"/>
+												<xs:attribute name="type" type="xs:string" use="required"/>
+												<xs:attribute name="ownerId" type="xs:ID"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
