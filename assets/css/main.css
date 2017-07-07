@@ -2560,6 +2560,11 @@
 			max-width: 40%;
 		}
 
+
+		.image.avatar {
+			max-width: 20%;
+		}
+
 			.image.left img, .image.right img {
 				width: 100%;
 			}
